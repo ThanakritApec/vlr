@@ -34,7 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
         ],
-        //kuy
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(56.0),
           child: Padding(
