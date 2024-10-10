@@ -16,17 +16,17 @@ class EditScreen extends StatefulWidget {
 
 class _EditScreenState extends State<EditScreen> {
   final formKey = GlobalKey<FormState>();
-  final compnameController = TextEditingController();
-  final characterController = TextEditingController();
-  final augmentController = TextEditingController();
-  final emblemController = TextEditingController();
+  final ingamenameController = TextEditingController();
+  final realnameController = TextEditingController();
+  final teamController = TextEditingController();
+  final zoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    compnameController.text = widget.statement.ingamename;
-    characterController.text = widget.statement.realname;
-    augmentController.text = widget.statement.team;
-    emblemController.text = widget.statement.zone;
+    ingamenameController.text = widget.statement.ingamename;
+    realnameController.text = widget.statement.realname;
+    teamController.text = widget.statement.team;
+    zoneController.text = widget.statement.zone;
     return Scaffold(
         appBar: AppBar(
           title: const Text('แบบฟอร์มแก้ไขข้อมูล'),
@@ -40,7 +40,7 @@ class _EditScreenState extends State<EditScreen> {
                     labelText: 'Playername',
                   ),
                   autofocus: false,
-                  controller: compnameController,
+                  controller: ingamenameController,
                   validator: (String? str) {
                     if (str!.isEmpty) {
                       return 'กรุณากรอกข้อมูล';
@@ -52,7 +52,7 @@ class _EditScreenState extends State<EditScreen> {
                     labelText: 'Realname',
                   ),
                   autofocus: false,
-                  controller: characterController,
+                  controller: realnameController,
                   validator: (String? str) {
                     if (str!.isEmpty) {
                       return 'กรุณากรอกข้อมูล';
@@ -64,7 +64,7 @@ class _EditScreenState extends State<EditScreen> {
                     labelText: 'Team',
                   ),
                   autofocus: false,
-                  controller: augmentController,
+                  controller: teamController,
                   validator: (String? str) {
                     if (str!.isEmpty) {
                       return 'กรุณากรอกข้อมูล';
@@ -76,7 +76,7 @@ class _EditScreenState extends State<EditScreen> {
                     labelText: 'Zone',
                   ),
                   autofocus: false,
-                  controller: emblemController,
+                  controller: zoneController,
                   validator: (String? str) {
                     if (str!.isEmpty) {
                       return 'กรุณากรอกข้อมูล';
@@ -90,10 +90,10 @@ class _EditScreenState extends State<EditScreen> {
                         // create transaction data object
                         var statement = Transactions(
                           keyID: null,
-                          ingamename: compnameController.text,
-                          realname: characterController.text,
-                          team: augmentController.text,
-                          zone: emblemController.text,
+                          ingamename: ingamenameController.text,
+                          realname: realnameController.text,
+                          team: teamController.text,
+                          zone: zoneController.text,
                         );
                         // add transaction data object to provider
                         var provider = Provider.of<TransactionProvider>(context,

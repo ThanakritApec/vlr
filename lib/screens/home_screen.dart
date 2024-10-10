@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 8, 234, 250),
+        backgroundColor: const Color.fromARGB(255, 255, 0, 0),
         title: const Text(
           "ชื่อCOMPTFT",
           style: TextStyle(
@@ -34,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
         ],
+        //kuy
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(56.0),
           child: Padding(
@@ -62,7 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (context, provider, child) {
           final filteredTransactions =
               provider.transactions.where((transaction) {
-            return transaction.compname
+            return transaction
+                .toString()
                 .toLowerCase()
                 .contains(searchQuery.toLowerCase());
           }).toList();
@@ -85,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: ListTile(
                     contentPadding: EdgeInsets.all(16.0),
                     title: Text(
-                      statement.compname,
+                      statement.ingamename,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
@@ -94,19 +96,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('ตัวละคร: ${statement.character}',
+                        Text('Playername: ${statement.ingamename}',
                             style: TextStyle(fontSize: 16)),
-                        Text('Augment: ${statement.augment}',
+                        Text('Realname: ${statement.realname}',
                             style: TextStyle(fontSize: 16)),
-                        Text('Emblem: ${statement.emblem}',
+                        Text('Team: ${statement.team}',
+                            style: TextStyle(fontSize: 16)),
+                        Text('Zoneplay: ${statement.zone}',
                             style: TextStyle(fontSize: 16)),
                       ],
                     ),
                     leading: CircleAvatar(
-                      backgroundColor: const Color.fromARGB(255, 255, 73, 73),
+                      backgroundColor: const Color.fromARGB(255, 2, 18, 252),
                       child: FittedBox(
                         child: Text(
-                          statement.compname,
+                          statement.ingamename,
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -114,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     trailing: IconButton(
                       icon: const Icon(
                         Icons.delete,
-                        color: Colors.red,
+                        color: Color.fromARGB(255, 253, 18, 1),
                         size: 45,
                       ),
                       onPressed: () {

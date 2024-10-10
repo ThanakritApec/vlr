@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
           bottomNavigationBar: TabBar(
             tabs: [
               Tab(
-                text: "รายชื่อCOMP",
+                text: "รายชื่อPlayer",
                 icon: Icon(Icons.list),
               ),
               Tab(
