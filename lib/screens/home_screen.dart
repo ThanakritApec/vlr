@@ -62,8 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (context, provider, child) {
           final filteredTransactions =
               provider.transactions.where((transaction) {
-            return transaction
-                .toString()
+            return transaction.ingamename
                 .toLowerCase()
                 .contains(searchQuery.toLowerCase());
           }).toList();
@@ -106,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     leading: CircleAvatar(
-                      backgroundColor: const Color.fromARGB(255, 2, 18, 252),
+                      backgroundColor: const Color.fromARGB(255, 255, 71, 71),
                       child: FittedBox(
                         child: Text(
                           statement.ingamename,
