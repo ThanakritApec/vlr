@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 255, 0, 0),
         title: const Text(
-          "ชื่อCOMPTFT",
+          "VLR PLAYER",
           style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 25, color: Colors.white),
         ),
@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: TextStyle(fontSize: 16)),
                         Text('Team: ${statement.team}',
                             style: TextStyle(fontSize: 16)),
-                        Text('Zoneplay: ${statement.zone}',
+                        Text('Zone: ${statement.zone}',
                             style: TextStyle(fontSize: 16)),
                       ],
                     ),

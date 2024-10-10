@@ -24,10 +24,10 @@ class TransactionDB {
     var store = intMapStoreFactory.store('expense');
 
     var keyID = store.add(db, {
-      "Ingamename": statement.ingamename,
-      "Realname": statement.realname,
-      "Team": statement.team,
-      "Zone": statement.zone,
+      "ingamename": statement.ingamename,
+      "realname": statement.realname,
+      "team": statement.team,
+      "zone": statement.zone,
     });
     db.close();
     return keyID;
@@ -42,10 +42,10 @@ class TransactionDB {
     for (var record in snapshot) {
       transactions.add(Transactions(
         keyID: record.key,
-        ingamename: record['Ingamename'].toString(),
-        realname: record['Realname'].toString(),
-        team: record['Team'].toString(),
-        zone: record['Zone'].toString(),
+        ingamename: record['ingamename'].toString(),
+        realname: record['realname'].toString(),
+        team: record['team'].toString(),
+        zone: record['zone'].toString(),
       ));
     }
     db.close();
@@ -66,10 +66,10 @@ class TransactionDB {
     var store = intMapStoreFactory.store('expense');
     var filter = Finder(filter: Filter.equals(Field.key, statement.keyID));
     var result = store.update(db, finder: filter, {
-      "Ingamename": statement.ingamename,
-      "Realname": statement.realname,
-      "Team": statement.team,
-      "Zone": statement.zone,
+      "ingamename": statement.ingamename,
+      "realname": statement.realname,
+      "team": statement.team,
+      "zone": statement.zone,
     });
     db.close();
     print('update result: $result');

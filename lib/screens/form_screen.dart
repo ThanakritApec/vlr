@@ -14,10 +14,10 @@ class FormScreen extends StatefulWidget {
 
 class _FormScreenState extends State<FormScreen> {
   final formKey = GlobalKey<FormState>();
-  final compnameController = TextEditingController();
-  final characterController = TextEditingController();
-  final augmentController = TextEditingController();
-  final emblemController = TextEditingController();
+  final playernameCtl = TextEditingController();
+  final realnameCtl = TextEditingController();
+  final teamCtl = TextEditingController();
+  final zoneCtl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class _FormScreenState extends State<FormScreen> {
                     labelText: 'Playername',
                   ),
                   autofocus: false,
-                  controller: compnameController,
+                  controller: playernameCtl,
                   validator: (String? str) {
                     if (str!.isEmpty) {
                       return 'กรุณากรอกข้อมูล';
@@ -46,7 +46,7 @@ class _FormScreenState extends State<FormScreen> {
                     labelText: 'Realname',
                   ),
                   autofocus: false,
-                  controller: characterController,
+                  controller: realnameCtl,
                   validator: (String? str) {
                     if (str!.isEmpty) {
                       return 'กรุณากรอกข้อมูล';
@@ -58,7 +58,7 @@ class _FormScreenState extends State<FormScreen> {
                     labelText: 'Team',
                   ),
                   autofocus: false,
-                  controller: augmentController,
+                  controller: teamCtl,
                   validator: (String? str) {
                     if (str!.isEmpty) {
                       return 'กรุณากรอกข้อมูล';
@@ -70,7 +70,7 @@ class _FormScreenState extends State<FormScreen> {
                     labelText: 'Zone',
                   ),
                   autofocus: false,
-                  controller: emblemController,
+                  controller: zoneCtl,
                   validator: (String? str) {
                     if (str!.isEmpty) {
                       return 'กรุณากรอกข้อมูล';
@@ -84,10 +84,10 @@ class _FormScreenState extends State<FormScreen> {
                         // create transaction data object
                         var statement = Transactions(
                           keyID: null,
-                          ingamename: compnameController.text,
-                          realname: characterController.text,
-                          team: augmentController.text,
-                          zone: emblemController.text,
+                          ingamename: playernameCtl.text,
+                          realname: realnameCtl.text,
+                          team: teamCtl.text,
+                          zone: zoneCtl.text,
                         );
                         // add transaction data object to provider
                         var provider = Provider.of<TransactionProvider>(context,
