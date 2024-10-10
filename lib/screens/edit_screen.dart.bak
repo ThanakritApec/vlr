@@ -89,7 +89,7 @@ class _EditScreenState extends State<EditScreen> {
                       if (formKey.currentState!.validate()) {
                         // create transaction data object
                         var statement = Transactions(
-                          keyID: null,
+                          keyID: widget.statement.keyID,
                           ingamename: ingamenameController.text,
                           realname: realnameController.text,
                           team: teamController.text,
